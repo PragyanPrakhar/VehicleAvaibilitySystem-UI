@@ -50,8 +50,8 @@ const Signup = () => {
             );
             navigate("/login");
         } catch (err) {
-            console.error("Signup error:", err);
-            setError("Failed to create an account. Please try again.");
+            console.error("Signup error:", err?.response?.data);
+            setError(err?.response?.data);
         } finally {
             setLoading(false);
         }
